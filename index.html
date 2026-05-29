@@ -17,14 +17,29 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     <nav id="main-nav">
       <a href="#accueil" class="nav-logo">Noor</a>
-      <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#univers">Univers</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Ouvrir le menu de navigation"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <div id="nav-menu" class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#univers">Univers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section id="accueil" class="hero">
@@ -275,6 +290,51 @@
       document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
       const nav = document.getElementById("main-nav");
+      const navToggle = document.getElementById("nav-toggle");
+      const navBackdrop = document.getElementById("nav-backdrop");
+
+      function setMenuOpen(open) {
+        if (!nav || !navToggle) return;
+        nav.classList.toggle("nav-open", open);
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        navToggle.setAttribute(
+          "aria-label",
+          open ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"
+        );
+        if (navBackdrop) {
+          navBackdrop.classList.toggle("nav-backdrop--open", open);
+          navBackdrop.setAttribute("aria-hidden", open ? "false" : "true");
+        }
+        document.body.style.overflow = open ? "hidden" : "";
+      }
+
+      function closeMenu() {
+        setMenuOpen(false);
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener("click", () => {
+          setMenuOpen(!nav.classList.contains("nav-open"));
+        });
+      }
+      if (navBackdrop) {
+        navBackdrop.addEventListener("click", closeMenu);
+      }
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && nav.classList.contains("nav-open")) {
+          closeMenu();
+        }
+      });
+      window.addEventListener(
+        "resize",
+        () => {
+          if (window.matchMedia("(min-width: 901px)").matches) {
+            closeMenu();
+          }
+        },
+        { passive: true }
+      );
+
       window.addEventListener(
         "scroll",
         () => {
@@ -288,6 +348,9 @@
           e.preventDefault();
           const target = document.querySelector(a.getAttribute("href"));
           if (target) target.scrollIntoView({ behavior: "smooth" });
+          if (nav.contains(a) && nav.classList.contains("nav-open")) {
+            closeMenu();
+          }
         });
       });
     </script>

@@ -100,6 +100,22 @@
   .nav-links a:hover { color: var(--rose-deep); }
   .nav-links a:hover::after { transform: scaleX(1); }
 
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-backdrop {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 0;
+  }
+
   /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
@@ -723,23 +739,126 @@
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
     nav {
-      padding: 1.1rem clamp(0.85rem, 3.5vw, 1.5rem);
-      justify-content: center;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem clamp(0.85rem, 3.5vw, 1.25rem);
     }
     nav.scrolled {
-      padding: 0.85rem clamp(0.85rem, 3.5vw, 1.5rem);
+      padding: 0.75rem clamp(0.85rem, 3.5vw, 1.25rem);
     }
     .nav-logo {
-      font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+      flex-shrink: 0;
     }
-    .nav-links {
-      gap: clamp(0.45rem, 2vw, 1.25rem);
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      margin-left: auto;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      z-index: 220;
+    }
+    .nav-toggle:focus-visible {
+      outline: 2px solid var(--terra);
+      outline-offset: 3px;
+    }
+    .nav-toggle-bar {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--text-dark);
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    nav.nav-open .nav-toggle .nav-toggle-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    nav.nav-open .nav-toggle .nav-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+    nav.nav-open .nav-toggle .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(58, 42, 34, 0.42);
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.28s ease, visibility 0.28s ease;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+    .nav-backdrop.nav-backdrop--open {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .nav-menu {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(100vw - 2.5rem, 300px);
+      max-width: 100%;
+      flex: none;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 5.25rem 1.5rem 2rem;
+      background: rgba(250, 246, 240, 0.98);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-left: 1px solid rgba(200, 169, 122, 0.35);
+      box-shadow: -12px 0 40px rgba(58, 42, 34, 0.14);
+      transform: translateX(100%);
+      transition: transform 0.32s ease;
+      z-index: 200;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav.nav-open .nav-menu {
+      transform: translateX(0);
+    }
+
+    .nav-links {
+      flex-direction: column;
       width: 100%;
+      align-items: stretch;
+      gap: 0;
+      justify-content: flex-start;
+    }
+    .nav-links li {
+      border-bottom: 1px solid rgba(200, 169, 122, 0.22);
+    }
+    .nav-links li:first-child {
+      border-top: 1px solid rgba(200, 169, 122, 0.22);
     }
     .nav-links a {
-      font-size: clamp(0.52rem, 2.2vw, 0.68rem);
-      letter-spacing: clamp(0.06em, 0.35vw, 0.2em);
+      display: block;
+      padding: 1.05rem 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+    }
+    .nav-links a::after {
+      display: none;
     }
 
     .hero {
@@ -829,15 +948,5 @@
     }
     .footer-deco {
       letter-spacing: 0.35rem;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .nav-links {
-      gap: 0.35rem 0.5rem;
-    }
-    .nav-links a {
-      letter-spacing: 0.05em;
-      font-size: 0.5rem;
     }
   }
