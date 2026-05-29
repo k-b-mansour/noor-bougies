@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Noor — bougies décoratives artisanales. Ambiance bohème et douceur pour la maison."
+    />
+    <title>Noor — Bougies décoratives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="stars" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a href="#accueil" class="brand">
+        <img
+          src="images/logo-noor.jpg"
+          alt="Noor — Bougies décoratives"
+          width="200"
+          height="200"
+          class="brand__logo"
+        />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#univers">Univers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="accueil">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Artisanat &amp; douceur</p>
+          <h1>Noor</h1>
+          <p class="hero__tagline">Bougies décoratives pour une maison qui respire la lumière.</p>
+          <a href="#contact" class="btn">Écrire un mot doux</a>
+        </div>
+        <figure class="hero__visual">
+          <img
+            src="images/hero-bougies.jpg"
+            alt="Bougies décoratives en forme d’étoile et de croissant, tons rose pastel"
+            width="900"
+            height="700"
+            loading="eager"
+          />
+        </figure>
+      </section>
+
+      <section id="apropos" class="section section--kraft">
+        <div class="section__inner">
+          <h2>À propos</h2>
+          <p>
+            Noor, c’est une invitation à ralentir : des formes délicates, des détails gravés
+            comme du papier dentelle, et cette douceur rose qui rappelle le premier rayon du
+            matin. Chaque pièce est pensée comme un petit objet de décoration, presque céleste,
+            pour accompagner vos moments calmes.
+          </p>
+          <p>
+            Les bougies décoratives habillent une table, un coin lecture ou une chambre avec
+            une touche bohème et élégante — sans jamais en faire trop.
+          </p>
+        </div>
+      </section>
+
+      <section id="univers" class="section section--light">
+        <div class="section__inner section__inner--split">
+          <div>
+            <h2>L’univers Noor</h2>
+            <ul class="pill-list">
+              <li>Étoiles &amp; lunes</li>
+              <li>Pastels &amp; textures</li>
+              <li>Esprit fait main</li>
+            </ul>
+            <p>
+              Inspiré par la nature et le ciel, le style Noor mélange lignes fines, couronnes
+              de feuillages et motifs gravés qui captent la lumière. Une esthétique minimaliste
+              et chaleureuse, entre kraft et blanc cassé.
+            </p>
+          </div>
+          <div class="card card--accent" aria-hidden="true">
+            <span class="moon-icon" aria-hidden="true"></span>
+            <p class="card__quote">
+              « La lumière la plus douce est celle qu’on choisit pour soi. »
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--contact">
+        <div class="section__inner section__inner--narrow">
+          <h2>Un petit mot</h2>
+          <p>
+            Ce site est un cadeau de remerciement. Pour toute question ou commande, la personne
+            concernée pourra ajouter ici son e-mail, Instagram ou numéro — en attendant, vous
+            pouvez la contacter comme d’habitude.
+          </p>
+          <p class="hint">
+            Astuce : dans <code>index.html</code>, remplacez le lien ci-dessous par un vrai
+            <code>mailto:</code> ou un lien vers les réseaux sociaux.
+          </p>
+          <a href="#" class="btn btn--outline">Contact à personnaliser</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Noor — Bougies décoratives</p>
+      <p class="site-footer__note">Fait avec gratitude.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
