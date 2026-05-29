@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Noor — bougies décoratives artisanales. Ambiance bohème et douceur pour la maison."
@@ -11,115 +11,240 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="stars" aria-hidden="true"></div>
+    <nav id="main-nav">
+      <a href="#accueil" class="nav-logo">Noor</a>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#univers">Univers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-    <header class="site-header">
-      <a href="#accueil" class="brand">
-        <img
-          src="images/logo-noor.jpg"
-          alt="Noor — Bougies décoratives"
-          width="200"
-          height="200"
-          class="brand__logo"
-        />
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="#accueil">Accueil</a>
-        <a href="#apropos">À propos</a>
-        <a href="#univers">Univers</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main id="accueil">
-      <section class="hero">
-        <div class="hero__content">
-          <p class="hero__eyebrow">Artisanat &amp; douceur</p>
-          <h1>Noor</h1>
-          <p class="hero__tagline">Bougies décoratives pour une maison qui respire la lumière.</p>
-          <a href="#contact" class="btn">Écrire un mot doux</a>
-        </div>
-        <figure class="hero__visual">
+    <section id="accueil" class="hero">
+      <div class="hero-left">
+        <span class="hero-bg-deco" aria-hidden="true">✦</span>
+        <div class="hero-tag reveal">Artisanat &amp; douceur</div>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Noor<em>Lumière</em>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          La lumière qui embellit vos instants — bougies décoratives, formes délicates et détails
+          gravés pour une maison tout en douceur.
+        </p>
+        <a href="#contact" class="hero-cta reveal reveal-delay-3">
+          Écrire un mot doux <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="hero-right">
+        <div class="hero-img-wrap">
           <img
-            src="images/hero-bougies.jpg"
-            alt="Bougies décoratives en forme d’étoile et de croissant, tons rose pastel"
-            width="900"
-            height="700"
+            class="hero-photo--bougie"
+            src="images/noor-bougie-theme.png"
+            alt="Bougie décorative Noor, tons crème et rose poudré, ambiance artisanale élégante"
             loading="eager"
           />
-        </figure>
-      </section>
-
-      <section id="apropos" class="section section--kraft">
-        <div class="section__inner">
-          <h2>À propos</h2>
-          <p>
-            Noor, c’est une invitation à ralentir : des formes délicates, des détails gravés
-            comme du papier dentelle, et cette douceur rose qui rappelle le premier rayon du
-            matin. Chaque pièce est pensée comme un petit objet de décoration, presque céleste,
-            pour accompagner vos moments calmes.
-          </p>
-          <p>
-            Les bougies décoratives habillent une table, un coin lecture ou une chambre avec
-            une touche bohème et élégante — sans jamais en faire trop.
-          </p>
+          <div class="hero-img-overlay"></div>
         </div>
-      </section>
+        <div class="hero-badge">
+          <div class="hero-badge-label">Fait main avec</div>
+          <div class="hero-badge-value">Gratitude</div>
+        </div>
+      </div>
+    </section>
 
-      <section id="univers" class="section section--light">
-        <div class="section__inner section__inner--split">
-          <div>
-            <h2>L’univers Noor</h2>
-            <ul class="pill-list">
-              <li>Étoiles &amp; lunes</li>
-              <li>Pastels &amp; textures</li>
-              <li>Esprit fait main</li>
-            </ul>
+    <section id="apropos">
+      <div class="apropos">
+        <div>
+          <div class="section-label reveal">À propos</div>
+          <h2 class="section-title reveal reveal-delay-1">Une invitation<br />à <em>ralentir</em></h2>
+          <div class="apropos-text reveal reveal-delay-2">
             <p>
-              Inspiré par la nature et le ciel, le style Noor mélange lignes fines, couronnes
-              de feuillages et motifs gravés qui captent la lumière. Une esthétique minimaliste
-              et chaleureuse, entre kraft et blanc cassé.
+              Noor, c’est une invitation à ralentir : des formes délicates, des détails gravés comme
+              du papier dentelle, et cette douceur rose qui rappelle le premier rayon du matin.
             </p>
-          </div>
-          <div class="card card--accent" aria-hidden="true">
-            <span class="moon-icon" aria-hidden="true"></span>
-            <p class="card__quote">
-              « La lumière la plus douce est celle qu’on choisit pour soi. »
+            <p>
+              Chaque pièce est pensée comme un petit objet de décoration, presque céleste, pour
+              accompagner vos moments calmes.
+            </p>
+            <p>
+              Les bougies décoratives habillent une table, un coin lecture ou une chambre avec une
+              touche bohème et élégante — sans jamais en faire trop.
             </p>
           </div>
         </div>
-      </section>
-
-      <section id="contact" class="section section--contact">
-        <div class="section__inner section__inner--narrow">
-          <h2>Un petit mot</h2>
-          <p>
-            Ce site est un cadeau de remerciement. Pour toute question ou commande, la personne
-            concernée pourra ajouter ici son e-mail, Instagram ou numéro — en attendant, vous
-            pouvez la contacter comme d’habitude.
-          </p>
-          <p class="hint">
-            Astuce : dans <code>index.html</code>, remplacez le lien ci-dessous par un vrai
-            <code>mailto:</code> ou un lien vers les réseaux sociaux.
-          </p>
-          <a href="#" class="btn btn--outline">Contact à personnaliser</a>
+        <div class="apropos-visual reveal reveal-delay-1">
+          <div class="apropos-img-main">
+            <img
+              src="images/noor-invitation-sans-texte.png"
+              alt="Bougies décoratives Noor en forme d’étoile et de croissant de lune, cire rose sur papier de soie"
+              loading="lazy"
+            />
+          </div>
+          <div class="apropos-accent" aria-hidden="true"></div>
+          <blockquote class="apropos-quote">
+            « La lumière la plus douce est celle qu’on choisit pour soi. »
+          </blockquote>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Noor — Bougies décoratives</p>
-      <p class="site-footer__note">Fait avec gratitude.</p>
+    <section id="univers">
+      <div class="univers-header">
+        <div class="section-label reveal">L’univers Noor</div>
+        <h2 class="section-title reveal reveal-delay-1">Des <em>étoiles</em><br />pour la maison</h2>
+      </div>
+      <div class="univers-grid">
+        <div class="univers-card reveal">
+          <span class="univers-card-num" aria-hidden="true">01</span>
+          <span class="univers-card-icon" aria-hidden="true">☽</span>
+          <h3 class="univers-card-title">Étoiles &amp; lunes</h3>
+          <p class="univers-card-desc">
+            Formes célestes qui captent la lumière et habillent chaque espace d’une douceur lunaire
+            et apaisante.
+          </p>
+        </div>
+        <div class="univers-card reveal reveal-delay-1">
+          <span class="univers-card-num" aria-hidden="true">02</span>
+          <span class="univers-card-icon" aria-hidden="true">◌</span>
+          <h3 class="univers-card-title">Pastels &amp; textures</h3>
+          <p class="univers-card-desc">
+            Une palette de rose poudré, blanc cassé et kraft qui réchauffent les intérieurs sans
+            jamais en faire trop.
+          </p>
+        </div>
+        <div class="univers-card reveal reveal-delay-2">
+          <span class="univers-card-num" aria-hidden="true">03</span>
+          <span class="univers-card-icon" aria-hidden="true">✦</span>
+          <h3 class="univers-card-title">Esprit fait main</h3>
+          <p class="univers-card-desc">
+            Chaque bougie est façonnée à la main avec soin, unicité et une attention particulière aux
+            détails gravés.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="citation-section">
+      <span class="citation-stars reveal" aria-hidden="true">✦ ✦ ✦</span>
+      <p class="citation-text reveal reveal-delay-1">
+        « Inspiré par la nature et le ciel, le style Noor mélange lignes fines, couronnes de
+        feuillages et motifs gravés qui captent la lumière. »
+      </p>
+      <div class="citation-deco reveal reveal-delay-2" aria-hidden="true"></div>
+    </div>
+
+    <section id="contact">
+      <div>
+        <div class="section-label reveal">Un petit mot</div>
+        <h2 class="section-title reveal reveal-delay-1">Écrire<br /><em>à Noor</em></h2>
+        <p class="contact-desc reveal reveal-delay-2">
+          Pour toute question ou commande, écrivez ici. Chaque message est reçu avec la même douceur
+          que celle mise dans chaque bougie.
+        </p>
+        <p class="contact-wa-note reveal reveal-delay-3">
+          Vous préférez WhatsApp ? Un clic ouvre la conversation dans l’application ou WhatsApp Web.
+        </p>
+        <a
+          class="wa-btn reveal reveal-delay-3"
+          href="https://wa.me/33667627559?text=Bonjour%20Noor%2C%20"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Commander via WhatsApp
+        </a>
+      </div>
+      <form
+        class="contact-form reveal reveal-delay-1"
+        action="https://formsubmit.co/kawlabm@gmail.com"
+        method="POST"
+      >
+        <!-- FormSubmit : au 1er envoi, confirmez l’e-mail reçu sur kawlabm@gmail.com pour activer le formulaire. -->
+        <input type="hidden" name="_subject" value="Site Noor — nouveau message" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://k-b-mansour.github.io/noor-bougies/#contact" />
+        <input type="text" name="_gotcha" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="form-field">
+          <label for="prenom">Votre prénom</label>
+          <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            placeholder="Amina, Léa, Sarah…"
+            autocomplete="given-name"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="email">Votre e-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="votre@email.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+        <div class="form-field">
+          <label for="message">Votre message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Un mot doux, une commande, une question…"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="form-submit">Envoyer →</button>
+      </form>
+    </section>
+
+    <footer>
+      <span class="footer-logo">Noor</span>
+      <span class="footer-deco" aria-hidden="true">✦ ✦ ✦</span>
+      <span class="footer-copy">© <span id="year"></span> Noor — Bougies décoratives. Fait avec gratitude.</span>
     </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      const nav = document.getElementById("main-nav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          nav.classList.toggle("scrolled", window.scrollY > 60);
+        },
+        { passive: true }
+      );
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
     </script>
   </body>
 </html>

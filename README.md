@@ -1,6 +1,12 @@
 # Noor — site vitrine (GitHub Pages)
 
-Site statique simple pour présenter **Noor, bougies décoratives**. Hébergement gratuit possible avec **GitHub Pages**.
+Site statique pour **Noor**. Version **Cormorant Garamond + Jost**, palette crème / rose / or. Le formulaire de contact envoie les messages via **FormSubmit** vers **kawlabm@gmail.com** (voir section contact ci-dessous).
+
+## Formulaire de contact (FormSubmit)
+
+1. Après le **premier** message envoyé depuis le site, **FormSubmit** envoie un e-mail de **confirmation** sur **kawlabm@gmail.com** : il faut cliquer le lien pour **activer** le formulaire (anti-spam).
+2. Les envois suivants arrivent directement dans la boîte mail.
+3. Après envoi, la page redirige vers `https://k-b-mansour.github.io/noor-bougies/#contact`. Si votre URL GitHub Pages change, modifiez la valeur de `_next` dans `index.html` (champ caché du formulaire).
 
 ## Prérequis
 
@@ -41,12 +47,9 @@ Remplacez `VOTRE_USER` et `VOTRE_REPO` par votre identifiant GitHub et le nom du
 
 `https://VOTRE_USER.github.io/VOTRE_REPO/`
 
-### 4. Personnaliser le contact
+### 4. Contact (e-mail du formulaire)
 
-Ouvrez `index.html` et modifiez le lien du bouton « Contact à personnaliser » :
-
-- E-mail : `href="mailto:son-email@exemple.com"`
-- Instagram : `href="https://instagram.com/son_compte"`
+Le formulaire pointe vers **FormSubmit** (`kawlabm@gmail.com`). Aucune clé API n’est nécessaire sur le site ; pensez à activer le formulaire via le mail de confirmation au premier envoi.
 
 ## Fichiers importants
 
