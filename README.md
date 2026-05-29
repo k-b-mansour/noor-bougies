@@ -57,10 +57,12 @@ Le formulaire pointe vers **FormSubmit** (`kawlabm@gmail.com`). Aucune clé API 
 |--------|------|
 | `index.html` | Contenu et textes du site |
 | `css/style.css` | Couleurs, polices, mise en page |
-| `images/logo-noor.jpg` | Logo / étiquette Noor |
-| `images/hero-bougies.jpg` | Grande photo d’ambiance |
+| `images/logo-noor.jpg` | Logo / étiquette Noor (ressource optionnelle) |
+| `images/noor-bougie-theme.png` | Visuel hero (version en ligne [GitHub Pages](https://k-b-mansour.github.io/noor-bougies/)) |
+| `images/noor-invitation-sans-texte.png` | Visuel section À propos |
+| `images/hero-bougies.jpg` | Ancienne photo d’ambiance (non utilisée par la page actuelle) |
 
-Les fichiers `Média (1).jpg` et `Média (2).jpg` à la racine peuvent être conservés comme sauvegarde ; le site utilise les copies dans `images/`.
+Les autres PNG / JPG dans `images/` peuvent servir de variantes ou de sauvegarde.
 
 ## Tester en local
 
